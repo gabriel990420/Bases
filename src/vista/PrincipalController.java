@@ -12,6 +12,7 @@ import control.ControlEntrenamientos;
 import control.ControlMascota;
 import control.ControlRaza;
 import control.ControlVeterinario;
+import control.Controlcita;
 import control.Controltelefono_duenio;
 import control.Controltelefono_entrenador;
 import control.Controltelfono_veterinario;
@@ -52,7 +53,7 @@ public class PrincipalController implements Initializable {
      */
     //ingresarMascota
     @FXML
-    AnchorPane IM, ID, IV, IR, IETO, ITD, ITV, ITE, IE, EM, ED, EV, EETO, ER,ETD;
+    AnchorPane IM, ID, IV, IR, IETO, ITD, ITV, ITE, IE, EM, ED, EV, EETO, ER, ETD, ETV, ETE, EC, EE;
     //mascota
     @FXML
     TextField TFnombre, TFfecha, TFedad, TFrh, TFimagen, TFdescripcion, TFidd, TFidr;
@@ -98,6 +99,18 @@ public class PrincipalController implements Initializable {
     //eliminar telefono dueño
     @FXML
     TextField idtelefonoduenio;
+    //ELIMINAR TELEFONO VETERINARIO
+    @FXML
+    TextField idtelefonoveterinario;
+    //eliminar telefono entrenador
+    @FXML
+    TextField idtelefonoentrenador;
+    //eliminar cita
+    @FXML
+    TextField idcita;
+    //eliminar entrenador
+    @FXML
+    TextField identrenador;
 
     @FXML
     public void ingresarMascota(ActionEvent event) {
@@ -107,14 +120,19 @@ public class PrincipalController implements Initializable {
         IV.setVisible(false);
         IR.setVisible(false);
         IETO.setVisible(false);
+        EC.setVisible(false);
+        EE.setVisible(false);
         ITV.setVisible(false);
         ITE.setVisible(false);
         IE.setVisible(false);
+        ETV.setVisible(false);
         EM.setVisible(false);
         ED.setVisible(false);
         EV.setVisible(false);
+        ETE.setVisible(false);
         EETO.setVisible(false);
         ER.setVisible(false);
+        ETD.setVisible(false);
     }
 
     @FXML
@@ -173,7 +191,11 @@ public class PrincipalController implements Initializable {
         ID.setVisible(false);
         IM.setVisible(false);
         IR.setVisible(true);
+        ETV.setVisible(false);
+        ETE.setVisible(false);
         IETO.setVisible(false);
+        EC.setVisible(false);
+        EE.setVisible(false);
         ITD.setVisible(false);
         ITV.setVisible(false);
         ITE.setVisible(false);
@@ -183,6 +205,7 @@ public class PrincipalController implements Initializable {
         EV.setVisible(false);
         EETO.setVisible(false);
         ER.setVisible(false);
+        ETD.setVisible(false);
 
     }
 
@@ -194,7 +217,11 @@ public class PrincipalController implements Initializable {
         IR.setVisible(false);
         IETO.setVisible(false);
         ITD.setVisible(false);
+        EC.setVisible(false);
+        EE.setVisible(false);
         ITV.setVisible(false);
+        ETV.setVisible(false);
+        ETE.setVisible(false);
         ITE.setVisible(false);
         IE.setVisible(false);
         EM.setVisible(false);
@@ -202,6 +229,7 @@ public class PrincipalController implements Initializable {
         EV.setVisible(false);
         EETO.setVisible(false);
         ER.setVisible(false);
+        ETD.setVisible(false);
     }
 
     @FXML
@@ -242,7 +270,11 @@ public class PrincipalController implements Initializable {
         IM.setVisible(false);
         IV.setVisible(false);
         IR.setVisible(false);
+        EC.setVisible(false);
+        EE.setVisible(false);
         IETO.setVisible(false);
+        ETV.setVisible(false);
+        ETE.setVisible(false);
         ITD.setVisible(false);
         ITE.setVisible(false);
         ITV.setVisible(false);
@@ -252,6 +284,7 @@ public class PrincipalController implements Initializable {
         EV.setVisible(false);
         EETO.setVisible(false);
         ER.setVisible(false);
+        ETD.setVisible(false);
     }
 
     @FXML
@@ -294,14 +327,19 @@ public class PrincipalController implements Initializable {
         IV.setVisible(false);
         IR.setVisible(false);
         ITD.setVisible(false);
+        ETE.setVisible(false);
         ITV.setVisible(false);
+        ETV.setVisible(false);
         ITE.setVisible(false);
         IE.setVisible(false);
         EM.setVisible(false);
+        EC.setVisible(false);
+        EE.setVisible(false);
         ED.setVisible(false);
         EV.setVisible(false);
         EETO.setVisible(false);
         ER.setVisible(false);
+        ETD.setVisible(false);
     }
 
     @FXML
@@ -341,15 +379,20 @@ public class PrincipalController implements Initializable {
         IM.setVisible(false);
         IV.setVisible(false);
         IR.setVisible(false);
+        EC.setVisible(false);
+        EE.setVisible(false);
+        ETV.setVisible(false);
         ITD.setVisible(true);
         ITV.setVisible(false);
         ITE.setVisible(false);
         IE.setVisible(false);
+        ETE.setVisible(false);
         EM.setVisible(false);
         ED.setVisible(false);
         EV.setVisible(false);
         EETO.setVisible(false);
         ER.setVisible(false);
+        ETD.setVisible(false);
     }
 
     @FXML
@@ -373,8 +416,12 @@ public class PrincipalController implements Initializable {
         IM.setVisible(false);
         IV.setVisible(false);
         IR.setVisible(false);
+        ETV.setVisible(false);
+        EC.setVisible(false);
+        EE.setVisible(false);
         ITD.setVisible(false);
         ITV.setVisible(true);
+        ETE.setVisible(false);
         ITE.setVisible(false);
         IE.setVisible(false);
         EM.setVisible(false);
@@ -382,6 +429,7 @@ public class PrincipalController implements Initializable {
         EV.setVisible(false);
         EETO.setVisible(false);
         ER.setVisible(false);
+        ETD.setVisible(false);
     }
 
     @FXML
@@ -391,8 +439,12 @@ public class PrincipalController implements Initializable {
         IM.setVisible(false);
         IV.setVisible(false);
         IR.setVisible(false);
+        EC.setVisible(false);
+        EE.setVisible(false);
         ITD.setVisible(false);
         ITV.setVisible(false);
+        ETV.setVisible(false);
+        ETE.setVisible(false);
         ITE.setVisible(true);
         IE.setVisible(false);
         EM.setVisible(false);
@@ -400,6 +452,7 @@ public class PrincipalController implements Initializable {
         EV.setVisible(false);
         EETO.setVisible(false);
         ER.setVisible(false);
+        ETD.setVisible(false);
     }
 
     @FXML
@@ -450,9 +503,13 @@ public class PrincipalController implements Initializable {
         ID.setVisible(false);
         IM.setVisible(false);
         IV.setVisible(false);
+        ETV.setVisible(false);
+        EC.setVisible(false);
+        EE.setVisible(false);
         IR.setVisible(false);
         ITD.setVisible(false);
         ITV.setVisible(false);
+        ETE.setVisible(false);
         ITE.setVisible(false);
         IE.setVisible(true);
         EM.setVisible(false);
@@ -460,10 +517,11 @@ public class PrincipalController implements Initializable {
         EV.setVisible(false);
         EETO.setVisible(false);
         ER.setVisible(false);
+        ETD.setVisible(false);
     }
 
     @FXML
-    public void elminarMascota(ActionEvent event) {
+    public void eliminarMascota(ActionEvent event) {
         int id = Integer.parseInt(idmasco.getText());
         boolean b = ControlMascota.eliminarMascota(id);
         if (b) {
@@ -482,14 +540,19 @@ public class PrincipalController implements Initializable {
         IV.setVisible(false);
         IR.setVisible(false);
         ITD.setVisible(false);
+        EC.setVisible(false);
+        EE.setVisible(false);
         ITV.setVisible(false);
+        ETE.setVisible(false);
         ITE.setVisible(false);
         IE.setVisible(false);
+        ETV.setVisible(false);
         EM.setVisible(true);
         ED.setVisible(false);
         EV.setVisible(false);
         EETO.setVisible(false);
         ER.setVisible(false);
+        ETD.setVisible(false);
 
     }
 
@@ -512,15 +575,20 @@ public class PrincipalController implements Initializable {
         IM.setVisible(false);
         IV.setVisible(false);
         IR.setVisible(false);
+        EC.setVisible(false);
+        EE.setVisible(false);
         ITD.setVisible(false);
         ITV.setVisible(false);
         ITE.setVisible(false);
         IE.setVisible(false);
         EM.setVisible(false);
+        ETE.setVisible(false);
         ED.setVisible(true);
         EV.setVisible(false);
         EETO.setVisible(false);
         ER.setVisible(false);
+        ETD.setVisible(false);
+        ETV.setVisible(false);
 
     }
 
@@ -542,6 +610,9 @@ public class PrincipalController implements Initializable {
         ID.setVisible(false);
         IM.setVisible(false);
         IV.setVisible(false);
+        ETE.setVisible(false);
+        EC.setVisible(false);
+        EE.setVisible(false);
         IR.setVisible(false);
         ITD.setVisible(false);
         ITV.setVisible(false);
@@ -552,6 +623,8 @@ public class PrincipalController implements Initializable {
         EV.setVisible(true);
         EETO.setVisible(false);
         ER.setVisible(false);
+        ETD.setVisible(false);
+        ETV.setVisible(false);
 
     }
 
@@ -574,7 +647,10 @@ public class PrincipalController implements Initializable {
         IV.setVisible(false);
         IR.setVisible(false);
         ITD.setVisible(false);
+        EC.setVisible(false);
+        EE.setVisible(false);
         ITV.setVisible(false);
+        ETE.setVisible(false);
         ITE.setVisible(false);
         IE.setVisible(false);
         EM.setVisible(false);
@@ -582,6 +658,8 @@ public class PrincipalController implements Initializable {
         EV.setVisible(false);
         EETO.setVisible(true);
         ER.setVisible(false);
+        ETD.setVisible(false);
+        ETV.setVisible(false);
 
     }
 
@@ -605,7 +683,10 @@ public class PrincipalController implements Initializable {
         IV.setVisible(false);
         IR.setVisible(false);
         ITD.setVisible(false);
+        EC.setVisible(false);
+        EE.setVisible(false);
         ITV.setVisible(false);
+        ETE.setVisible(false);
         ITE.setVisible(false);
         IE.setVisible(false);
         EM.setVisible(false);
@@ -613,17 +694,192 @@ public class PrincipalController implements Initializable {
         EV.setVisible(false);
         EETO.setVisible(false);
         ER.setVisible(true);
+        ETD.setVisible(false);
+        ETV.setVisible(false);
 
     }
 
     @FXML
-    public void eliminarTelefonoDuenio(ActionEvent event){
-        int id= Integer.parseInt(idtelefonoduenio.getText());
-        boolean b= Controltelefono_duenio.eliminarTele_Duenio(id);
+    public void eliminarTelefonoDuenio(ActionEvent event) {
+        int id = Integer.parseInt(idtelefonoduenio.getText());
+        boolean b = Controltelefono_duenio.eliminarTele_Duenio(id);
+        if (b) {
+            JOptionPane.showMessageDialog(null, "Eliminacion exitosa", "", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(null, "No se ha eliminar", "", JOptionPane.ERROR_MESSAGE);
+        }
+
     }
+
+    @FXML
+    public void EliminarTelefonoDuenio(ActionEvent event) {
+        IETO.setVisible(false);
+        ID.setVisible(false);
+        IM.setVisible(false);
+        IV.setVisible(false);
+        IR.setVisible(false);
+        EC.setVisible(false);
+        EE.setVisible(false);
+        ITD.setVisible(false);
+        ITV.setVisible(false);
+        ITE.setVisible(false);
+        IE.setVisible(false);
+        ETE.setVisible(false);
+        EM.setVisible(false);
+        ED.setVisible(false);
+        EV.setVisible(false);
+        EETO.setVisible(false);
+        ER.setVisible(false);
+        ETD.setVisible(true);
+        ETV.setVisible(false);
+    }
+
+    @FXML
+    public void eliminarTelefonoVeterinario(ActionEvent event) {
+        int id = Integer.parseInt(idtelefonoveterinario.getText());
+        boolean b = Controltelfono_veterinario.eliminarTelVe(id);
+        if (b) {
+            JOptionPane.showMessageDialog(null, "Eliminacion exitosa", "", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(null, "No se ha eliminar", "", JOptionPane.ERROR_MESSAGE);
+        }
+
+    }
+
+    @FXML
+    public void EliminarTelefonoVeterinario(ActionEvent event) {
+        IETO.setVisible(false);
+        ID.setVisible(false);
+        IM.setVisible(false);
+        IV.setVisible(false);
+        IR.setVisible(false);
+        ITD.setVisible(false);
+        ITV.setVisible(false);
+        ITE.setVisible(false);
+        IE.setVisible(false);
+        EM.setVisible(false);
+        ED.setVisible(false);
+        EV.setVisible(false);
+        EETO.setVisible(false);
+        EC.setVisible(false);
+        EE.setVisible(false);
+        ER.setVisible(false);
+        ETD.setVisible(false);
+        ETV.setVisible(true);
+        ETE.setVisible(false);
+
+    }
+
+    @FXML
+    public void eliminarTelefonoEntrenador(ActionEvent event) {
+        int id = Integer.parseInt(idtelefonoentrenador.getText());
+        boolean b = Controltelefono_entrenador.eliminarTE(id);
+        if (b) {
+            JOptionPane.showMessageDialog(null, "Eliminacion exitosa", "", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(null, "No se ha eliminar", "", JOptionPane.ERROR_MESSAGE);
+        }
+
+    }
+
+    @FXML
+    public void EliminarTelefonoEntrenador(ActionEvent event) {
+        IETO.setVisible(false);
+        ID.setVisible(false);
+        IM.setVisible(false);
+        IV.setVisible(false);
+        IR.setVisible(false);
+        ITD.setVisible(false);
+        ITV.setVisible(false);
+        ITE.setVisible(false);
+        IE.setVisible(false);
+        EM.setVisible(false);
+        ED.setVisible(false);
+        EV.setVisible(false);
+        EETO.setVisible(false);
+        ER.setVisible(false);
+        ETD.setVisible(false);
+        ETV.setVisible(false);
+        ETE.setVisible(true);
+        EC.setVisible(false);
+        EE.setVisible(false);
+
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }
 
+    @FXML
+    public void eliminarCita(ActionEvent event) {
+
+        int id = Integer.parseInt(idcita.getText());
+        boolean b = Controlcita.eliminarCita(id);
+
+        if (b) {
+            JOptionPane.showMessageDialog(null, "Se han eliminado los datos", "Operacion Exitosa", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(null, "No se han podido eliminar los datos", "Operacion Fallida", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    @FXML
+    public void eliminarEntrenador(ActionEvent event) {
+
+        int id = Integer.parseInt(identrenador.getText());
+        boolean b = ControlEntrenador.eliminarEntrenador(id);
+
+        if (b) {
+            JOptionPane.showMessageDialog(null, "Se han eliminado los datos", "Operacion Exitosa", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(null, "No se han podido eliminar los datos", "Operacion Fallida", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    @FXML
+    public void EliminarCita(ActionEvent event) {
+        IETO.setVisible(false);
+        ID.setVisible(false);
+        IM.setVisible(false);
+        IV.setVisible(false);
+        IR.setVisible(false);
+        ITD.setVisible(false);
+        ITV.setVisible(false);
+        ITE.setVisible(false);
+        IE.setVisible(false);
+        EM.setVisible(false);
+        ED.setVisible(false);
+        EV.setVisible(false);
+        EETO.setVisible(false);
+        ER.setVisible(false);
+        ETD.setVisible(false);
+        ETV.setVisible(false);
+        ETE.setVisible(false);
+        EC.setVisible(true);
+        EE.setVisible(false);
+    }
+
+    @FXML
+    public void EliminarEntrenador(ActionEvent event) {
+        IETO.setVisible(false);
+        ID.setVisible(false);
+        IM.setVisible(false);
+        IV.setVisible(false);
+        IR.setVisible(false);
+        ITD.setVisible(false);
+        ITV.setVisible(false);
+        ITE.setVisible(false);
+        IE.setVisible(false);
+        EM.setVisible(false);
+        ED.setVisible(false);
+        EV.setVisible(false);
+        EETO.setVisible(false);
+        ER.setVisible(false);
+        ETD.setVisible(false);
+        ETV.setVisible(false);
+        ETE.setVisible(false);
+        EC.setVisible(false);
+        EE.setVisible(true);
+    }
 }

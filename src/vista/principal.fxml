@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
@@ -9,7 +13,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.181" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vista.PrincipalController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vista.PrincipalController">
    <children>
       <Label layoutX="10.0" layoutY="341.0" text="Campos obligatorios*" />
       <MenuBar layoutX="-1.0" layoutY="2.0" opacity="0.83" prefHeight="25.0" prefWidth="600.0">
@@ -30,13 +34,16 @@
           </Menu>
           <Menu mnemonicParsing="false" text="Eliminar">
             <items>
-                  <MenuItem mnemonicParsing="false" text="Mascota" />
-                  <MenuItem mnemonicParsing="false" text="Dueño" />
-                  <MenuItem mnemonicParsing="false" text="Veterinario" />
-                  <MenuItem mnemonicParsing="false" text="Cita" />
-                  <MenuItem mnemonicParsing="false" text="Entrenador" />
-                  <MenuItem mnemonicParsing="false" text="Entrenamiento" />
-                  <MenuItem mnemonicParsing="false" text="Raza" />
+                  <MenuItem mnemonicParsing="false" onAction="#EliminarMascota" text="Mascota" />
+                  <MenuItem mnemonicParsing="false" onAction="#EliminarDuenio" text="Dueño" />
+                  <MenuItem mnemonicParsing="false" onAction="#EliminarVeterinario" text="Veterinario" />
+                  <MenuItem mnemonicParsing="false" onAction="#EliminarCita" text="Cita" />
+                  <MenuItem mnemonicParsing="false" onAction="#EliminarEntrenador" text="Entrenador" />
+                  <MenuItem mnemonicParsing="false" onAction="#EliminarEntrenamiento" text="Entrenamiento" />
+                  <MenuItem mnemonicParsing="false" onAction="#EliminarRaza" text="Raza" />
+                  <MenuItem mnemonicParsing="false" onAction="#EliminarTelefonoDuenio" text="Eliminar Telefono Dueño" />
+                  <MenuItem mnemonicParsing="false" onAction="#EliminarTelefonoVeterinario" text="Eliminar Telefono Veterinario" />
+                  <MenuItem mnemonicParsing="false" onAction="#EliminarTelefonoEntrenador" text="Eliminar Telefono Entrenador" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Consultar">
@@ -182,6 +189,86 @@
             <TextField fx:id="horarioI" layoutX="207.0" layoutY="173.0" />
             <TextField fx:id="horarioF" layoutX="207.0" layoutY="203.0" />
             <Button layoutX="256.0" layoutY="291.0" mnemonicParsing="false" onAction="#insertarEntrenador" text="Insertar" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="EM" layoutX="43.0" layoutY="45.0" prefHeight="278.0" prefWidth="456.0" visible="false">
+         <children>
+            <TextField fx:id="idmasco" layoutX="239.0" layoutY="63.0" />
+            <Label layoutX="71.0" layoutY="67.0" text="id Mascota*" />
+            <Button fx:id="eliminarMascota" layoutX="329.0" layoutY="114.0" mnemonicParsing="false" onAction="#eliminarMascota" text="Eliminar" />
+            <Label layoutX="71.0" layoutY="30.0" text="Eliminar Mascota" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="ED" layoutX="43.0" layoutY="52.0" prefHeight="278.0" prefWidth="480.0" visible="false">
+         <children>
+            <Label layoutX="59.0" layoutY="53.0" text="id Dueño*" />
+            <TextField fx:id="idduenio" layoutX="208.0" layoutY="49.0" />
+            <Label layoutX="59.0" layoutY="25.0" text="Eliminar Dueño" />
+            <Button layoutX="260.0" layoutY="114.0" mnemonicParsing="false" onAction="#eliminarDuenio" text="Eliminar Dueño" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="EV" layoutX="46.0" layoutY="52.0" prefHeight="278.0" prefWidth="474.0" visible="false">
+         <children>
+            <Label layoutX="49.0" layoutY="28.0" text="Eliminar Veterinario" />
+            <Label layoutX="49.0" layoutY="78.0" text="id Veterinario*" />
+            <TextField fx:id="idveterinario" layoutX="201.0" layoutY="83.0" />
+            <Button layoutX="201.0" layoutY="168.0" mnemonicParsing="false" onAction="#eliminarVeterinario" text="Eliminar Veterinario" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="EC" layoutX="43.0" layoutY="52.0" prefHeight="264.0" prefWidth="474.0" visible="false">
+         <children>
+            <Label layoutX="43.0" layoutY="30.0" text="Eliminar Cita" />
+            <Label layoutX="43.0" layoutY="76.0" text="id Cita*" />
+            <TextField fx:id="idcita" layoutX="140.0" layoutY="72.0" />
+            <Button layoutX="140.0" layoutY="120.0" mnemonicParsing="false" onAction="#eliminarCita" text="Eliminar Cita" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="EE" layoutX="37.0" layoutY="58.0" prefHeight="255.0" prefWidth="497.0" visible="false">
+         <children>
+            <Label layoutX="23.0" layoutY="27.0" text="Eliminar  Entrenador" />
+            <Label layoutX="23.0" layoutY="74.0" text="id Entrenador*" />
+            <TextField fx:id="identrenador" layoutX="164.0" layoutY="70.0" />
+            <Button layoutX="164.0" layoutY="128.0" mnemonicParsing="false" onAction="#eliminarEntrenador" text="Eliminar Entrenador" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="EETO" layoutX="25.0" layoutY="52.0" prefHeight="242.0" prefWidth="516.0" visible="false">
+         <children>
+            <Label layoutX="33.0" layoutY="37.0" text="Eliminar Entrenamiento" />
+            <Label layoutX="33.0" layoutY="84.0" text="id Entrenamiento*" />
+            <TextField fx:id="identrenamiento" layoutX="184.0" layoutY="80.0" />
+            <Button layoutX="184.0" layoutY="136.0" mnemonicParsing="false" onAction="#eliminarEntrenamiento" text="Eliminar Entrenamiento" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="ER" layoutX="33.0" layoutY="45.0" prefHeight="278.0" prefWidth="480.0" visible="false">
+         <children>
+            <Label layoutX="31.0" layoutY="28.0" text="Eliminar Raza" />
+            <Label layoutX="31.0" layoutY="82.0" text="id Raza" />
+            <TextField fx:id="idraza" layoutX="122.0" layoutY="78.0" />
+            <Button layoutX="122.0" layoutY="139.0" mnemonicParsing="false" onAction="#eliminarRaza" text="Eliminar Raza" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="ETD" layoutX="33.0" layoutY="45.0" prefHeight="286.0" prefWidth="516.0" visible="false">
+         <children>
+            <Label layoutX="26.0" layoutY="31.0" text="Eliminar Telefono Dueño" />
+            <Label layoutX="26.0" layoutY="80.0" text="id Telefono" />
+            <TextField fx:id="idtelefonoduenio" layoutX="133.0" layoutY="76.0" />
+            <Button layoutX="333.0" layoutY="76.0" mnemonicParsing="false" onAction="#eliminarTelefonoDuenio" text="Eliminar Telefono" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="ETV" layoutX="35.0" layoutY="52.0" prefHeight="255.0" prefWidth="491.0">
+         <children>
+            <Label layoutX="26.0" layoutY="29.0" text="Eliminar Telefono Veterinario" />
+            <Label layoutX="26.0" layoutY="63.0" text="id Telefono Veterinario" />
+            <TextField fx:id="idtelefonoveterinario" layoutX="180.0" layoutY="59.0" />
+            <Button layoutX="180.0" layoutY="128.0" mnemonicParsing="false" onAction="#eliminarTelefonoVeterinario" text="Eliminar Telefono" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="ETE" layoutX="43.0" layoutY="52.0" prefHeight="264.0" prefWidth="505.0" visible="false">
+         <children>
+            <Label layoutX="25.0" layoutY="25.0" text="Eliminar Telefono Entrenador" />
+            <Label layoutX="25.0" layoutY="63.0" text="id Telefono " />
+            <TextField fx:id="idtelefonoentrenador" layoutX="157.0" layoutY="59.0" />
+            <Button layoutX="157.0" layoutY="107.0" mnemonicParsing="false" onAction="#eliminarTelefonoEntrenador" text="Eliminar Telefono " />
          </children>
       </AnchorPane>
    </children>
