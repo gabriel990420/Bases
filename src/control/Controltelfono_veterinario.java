@@ -24,4 +24,14 @@ public class Controltelfono_veterinario {
     return m;
     
     }
+    public static boolean eliminarTelVe(int id){
+                boolean te;
+        telfono_veterinario objTE = new telfono_veterinario();
+        
+        String sql = "DELETE FROM telfono_veterinario WHERE idTel ="+ Integer.toString(id);
+        te=objTE.eliminarTV(sql);
+        
+        return te;
+        
+    }
 }

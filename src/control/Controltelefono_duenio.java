@@ -25,5 +25,15 @@ public class Controltelefono_duenio {
     
     
     }
+
+    public static boolean eliminarTele_Duenio(int id) {
+               boolean te;
+        telefono_duenio objTD = new telefono_duenio();
+        
+        String sql = "DELETE FROM telefono_duenio WHERE idTel ="+ Integer.toString(id);
+        te=objTD.eliminarTD(sql);
+        
+        return te;
+    }
     
 }

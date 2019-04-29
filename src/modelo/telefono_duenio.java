@@ -14,6 +14,7 @@ import java.sql.Statement;
  * @author david
  */
 public class telefono_duenio {
+
     String numeroDuenio;
     int idD;
 
@@ -61,7 +62,20 @@ public class telefono_duenio {
         }
         return d;
     }
-    
-    
-    
+
+    public boolean eliminarTD(String sql) {
+        boolean te = false;
+
+        try {
+            ConnectBD objCB = new ConnectBD();
+            if (objCB.crearConexion()) {
+                objCB.getStatement().executeUpdate(sql);
+            }
+            te = true;
+        } catch (Exception e) {
+            System.out.println("Error: " + e.toString());
+        }
+        return te;
+    }
+
 }

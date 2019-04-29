@@ -61,6 +61,21 @@ public class telfono_veterinario {
         return d;
     }
 
+    public boolean eliminarTV(String sql) {
+                        boolean te = false;
+        
+        try{
+            ConnectBD objCB = new ConnectBD();
+            if(objCB.crearConexion()){
+               objCB.getStatement().executeUpdate(sql);
+            }
+            te = true;
+        }catch(Exception e){
+            System.out.println("Error: " +e.toString());
+        }
+        return te;
+    }
+
 
     
     
